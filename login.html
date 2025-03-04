@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./loginstyles.css">
+  <title>Login</title>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h3>LearnVault</h3>
+    </div>
+    <div class="greeting">
+      <?php
+        $hour=date("H");
+        if($hour<12){
+          echo "Good morning";
+        }
+        else if($hour<16 && $hour>12){
+          echo "Good afternoon";
+        }
+        else{
+          echo "Good evening";
+        }
+      ?>      
+    </div>
+    <div class="date">
+      <?php
+        $time=date("D d M Y");
+        echo $time;
+      ?>    
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <form action="loginpage.php" method="post">Enter your identification</label>
+                <input type="text" name="username" id="username" placeholder="e.g NL0093BYO" required><br>
+                <label>Enter password</label>
+                <input type="password" name="password" id="password" placeholder="e.g 23/g*23@me" required>
+                <input class="btn" type="submit" value="Login" name="submit">
+      </form>
+    </div>
+    <?php
+      $host="localhost";
+      $user="root";
+      $pass="";
+      $db="learnvault";
+
+      $sql=new mysqli($host,$user,$pass,$db);
+      if($conn->connect_error){
+        echo "Failed to connect to database";
+        header("Location:index.php");
+        die();
+      }
+      else{
+        if(isset($_POST["submit"])){
+          $username=$_POST["username"];
+          $password=$_POST["password"];
+          $password=md5($password);//md5 hashing
+
+          $sql="SELECT * FROM credentials WHERE username='$username' AND password='$password'";
+          $result=$conn->query($sql);
+
+          if($result->num_rows>0){
+            session_start();
+            $row=$result->fetch_assoc();
+            $_SESSION['username']=$row['username'];
+            header("Location:upload.php");
+            exit();
+          }
+        }
+      }
+    ?>
+  </main>
+
+    <footer>
+        <hr>
+        <p>All Rights Reserved &copy; LearnVault</p>
+    </footer>
+</body>
+</html>
+
