@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnVault</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <h1>LearnVault</h1>
+        </div>
+        <nav class="nav">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li class="dropdown">
+                    <a href="#">Categories</a>
+                    <ul class="dropdown-content">
+                        <li><a href="#">Fiction</a></li>
+                        <li><a href="#">Non-Fiction</a></li>
+                        <li><a href="">Scholar’s Compendium</a></li>
+                    </ul>  
+                </li>
+                <li><a href="#">About Us</a></li>
+                <li><a class="adminlink" href="./loginpage.php">Admin Portal</a></li>
+            </ul>
+        </nav>
+        <div class="search">
+            <input type="search" name="search" id="search" placeholder="Search Books...">
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Empowering Minds Through Pages and Screens</h1>
+        </section>
+
+        <section class="recommended-books">
+            <h2>Recommended Books</h2>
+
+            <div class="category">
+                <h3>Fiction</h3>
+                <div class="book-list">
+                    <div class="book">
+                        <div class="subject">Science Fiction</div>
+                        <div class="author">Edgar Rice Burroughs</div>
+                    </div>
+                    <div class="book">
+                        <div class="subject">Romance</div>
+                        <div class="author">Danille Steele</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>Non-Fiction</h3>
+                <div class="book-list">
+                    <div class="book">
+                        <div class="subject">Politics</div>
+                        <div class="author">Gheorghe Alexandrescu</div>
+                    </div>
+                    <div class="book">
+                        <div class="subject">Religion</div>
+                        <div class="author">Johannes Tschandek</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="category">
+                <h3>Scholar’s Compendium</h3>
+                <div class="book-list">
+                    <div class="book">
+                        <div class="subject">Modern Sciences</div>
+                        <div class="author">A.F Abbot</div>
+                    </div>
+                    <div class="book">
+                        <div class="subject">Humanities</div>
+                        <div class="author">The Prince Niccolò Machiavelli</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="social-links">
+                <a href="#"><i class='bx bxl-whatsapp'></i></a>
+                <a href="#"><i class='bx bxl-linkedin'></i></a>
+                <a href="#"><i class='bx bxl-facebook-circle'></i></a>
+                <a href="#"><i class='bx bxl-instagram'></i></a>
+            </div>
+            <div class="quicklinks">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Fiction</a></li>
+                    <li><a href="#">Non-Fiction</a></li>
+                    <li><a href="#">Scholar’s Compendium</a></li>
+                </ul>
+            </div>
+            <div class="contact-info">
+                <h3>Contact Us</h3>
+                <p>Phone: +263 77 398 9400</p>
+                <p>Email: <i class='bx bx-envelope'></i> learnvault@gmail.com</p>
+                <p>Office Hours: <i class='bx bx-time-five'></i> 08:00 - 09:00 HRS</p>
+            </div>
+        </div>
+        <hr>
+        <div class="footer-bottom">
+            <p>&copy;
+            <?php
+                $year=date("Y");
+                echo $year;
+            ?>
+            LearnVault. All Rights Reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
