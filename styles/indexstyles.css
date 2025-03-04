@@ -1,0 +1,264 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lucy Said Ok', sans-serif;
+}
+
+
+body {
+    font-family: "Oswald", sans-serif;
+    background: #ddeef0;
+    width: 100%;
+}
+
+/* ====== HEADER ====== */
+header {
+    background: #004d40;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 15px 20px;
+    box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* ====== NAVIGATION ====== */
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav ul li {
+    position: relative;
+    padding: 10px;
+}
+
+.nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.nav ul li a:hover {
+    color: black;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #004d40;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    width: 200px;
+    z-index: 10;
+    text-align: left;
+    flex-direction: column;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background: #ddd;
+    color: black;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+    display: flex;
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ====== SEARCH BAR ====== */
+.search input {
+    width: 250px;
+    height: 35px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+}
+
+/* ====== MAIN CONTENT ====== */
+main {
+    padding-top: 80px;
+    text-align: center;
+}
+
+/* HERO SECTION */
+.hero h1 {
+    background: linear-gradient(to right, red, blue);
+    color: white;
+    padding: 20px;
+    font-size: 28px;
+    font-family: "Dancing Script", serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+/* RECOMMENDED BOOKS */
+.recommended-books h2 {
+    background: #f4f4f4;
+    color: #004d40;
+    padding: 20px;
+    margin: 40px 0;
+}
+
+.category {
+    margin-bottom: 20px;
+}
+
+.category h3 {
+    color: #004d40;
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.book-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.book {
+    background: #ffffff;
+    color: black;
+    width: 180px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #004d40;
+    transition: transform 0.3s;
+}
+
+.book:hover {
+    transform: scale(1.05);
+}
+
+.subject {
+    font-weight: bold;
+}
+
+.author {
+    background: #f4f4f4;
+    padding: 5px;
+}
+
+/* ====== FOOTER ====== */
+footer {
+    background: #004d40;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding-bottom: 30px;
+}
+
+.social-links i {
+    font-size: 24px;
+    margin: 0 10px;
+    transition: transform 0.3s;
+}
+
+.social-links i:hover {
+    transform: scale(1.2);
+}
+
+.quicklinks ul {
+    list-style: none;
+}
+
+.quicklinks ul li {
+    margin: 5px 0;
+}
+
+.quicklinks ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+.quicklinks ul li a:hover {
+    color: black;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
+
+hr {
+    width: 80%;
+    margin: 20px auto;
+    background: white;
+    height: 2px;
+    border: none;
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+}
+
+/* ====== RESPONSIVE DESIGN ====== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .nav ul {
+        flex-direction: column;
+        text-align: center;
+        gap: 10px;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .book-list {
+        flex-direction: column;
+        align-items: center;
+    }
+}
